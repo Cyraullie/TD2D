@@ -16,7 +16,7 @@ Tower defense en vue de dessus 2D avec godot
 
 # Information de base
 - Type de jeu : Tower Defense
-- Logiciel : Godot
+- Logiciel : Godot 4.2.1
 - Langage de programmation : GDScript
 - Plateforme : PC + Mobile
 - 2D vue de dessus

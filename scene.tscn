@@ -24,6 +24,8 @@ speed = 500
 metadata/_edit_group_ = true
 
 [node name="Path2D" type="Path2D" parent="monster"]
+position = Vector2(0, 10.0704)
+scale = Vector2(1, 1.15493)
 curve = SubResource("Curve2D_ruvb1")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="monster/Path2D"]
