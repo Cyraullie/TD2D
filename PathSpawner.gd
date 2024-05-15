@@ -20,7 +20,7 @@ func _on_timer_timeout():
 			get_parent().get_node("Start").show()
 		
 
-#TODO add wave system
+
 func _on_start_pressed():
 	Game.gameStarter = true
 	get_parent().get_node("Start").hide()
