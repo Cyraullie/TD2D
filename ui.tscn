@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj4qjhbt6s0n7"]
+[gd_scene load_steps=5 format=3 uid="uid://bj4qjhbt6s0n7"]
 
 [ext_resource type="PackedScene" uid="uid://tyd4ou4amnc3" path="res://Towers/RedTowerPanel.tscn" id="1_cr0te"]
+[ext_resource type="Script" path="res://ui.gd" id="1_nt13i"]
 
 [sub_resource type="GDScript" id="GDScript_j03bx"]
 script/source = "extends Label
@@ -31,13 +32,23 @@ func _process(delta):
 "
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_nt13i")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Shop" type="Panel" parent="."]
 offset_left = 1605.0
 offset_right = 1923.0
 offset_bottom = 1078.0
 
-[node name="FlowContainer" type="FlowContainer" parent="Panel"]
+[node name="CloseShop" type="Button" parent="Shop"]
+layout_mode = 0
+offset_left = -59.0
+offset_top = 11.0
+offset_right = -9.0
+offset_bottom = 61.0
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[node name="FlowContainer" type="FlowContainer" parent="Shop"]
 layout_mode = 0
 offset_left = 22.0
 offset_top = 13.0
@@ -46,22 +57,22 @@ offset_bottom = 1060.0
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 
-[node name="RedTowerPanel" parent="Panel/FlowContainer" instance=ExtResource("1_cr0te")]
+[node name="RedTowerPanel" parent="Shop/FlowContainer" instance=ExtResource("1_cr0te")]
 layout_mode = 2
 
-[node name="RedTowerPanel2" parent="Panel/FlowContainer" instance=ExtResource("1_cr0te")]
+[node name="RedTowerPanel2" parent="Shop/FlowContainer" instance=ExtResource("1_cr0te")]
 layout_mode = 2
 
-[node name="RedTowerPanel3" parent="Panel/FlowContainer" instance=ExtResource("1_cr0te")]
+[node name="RedTowerPanel3" parent="Shop/FlowContainer" instance=ExtResource("1_cr0te")]
 layout_mode = 2
 
-[node name="RedTowerPanel4" parent="Panel/FlowContainer" instance=ExtResource("1_cr0te")]
+[node name="RedTowerPanel4" parent="Shop/FlowContainer" instance=ExtResource("1_cr0te")]
 layout_mode = 2
 
-[node name="RedTowerPanel5" parent="Panel/FlowContainer" instance=ExtResource("1_cr0te")]
+[node name="RedTowerPanel5" parent="Shop/FlowContainer" instance=ExtResource("1_cr0te")]
 layout_mode = 2
 
-[node name="RedTowerPanel6" parent="Panel/FlowContainer" instance=ExtResource("1_cr0te")]
+[node name="RedTowerPanel6" parent="Shop/FlowContainer" instance=ExtResource("1_cr0te")]
 layout_mode = 2
 
 [node name="Health" type="Label" parent="."]
@@ -79,3 +90,14 @@ offset_bottom = 71.0
 theme_override_font_sizes/font_size = 50
 text = "Gold:"
 script = SubResource("GDScript_r1qr0")
+
+[node name="ShopButton" type="Button" parent="."]
+offset_left = 1746.0
+offset_top = 918.0
+offset_right = 1896.0
+offset_bottom = 1068.0
+theme_override_font_sizes/font_size = 50
+text = " Shop"
+
+[connection signal="pressed" from="Shop/CloseShop" to="." method="_on_close_shop_pressed"]
+[connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]
