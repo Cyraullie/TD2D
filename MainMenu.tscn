@@ -59,5 +59,9 @@ theme_override_font_sizes/font_size = 100
 text = "Quit"
 script = SubResource("GDScript_c73wq")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(963, 543)
+scale = Vector2(1, 4.8)
+
 [connection signal="pressed" from="HBoxContainer/Play" to="HBoxContainer/Play" method="_on_pressed"]
 [connection signal="pressed" from="HBoxContainer/Quit" to="HBoxContainer/Quit" method="_on_pressed"]
