@@ -13,6 +13,11 @@ func _process(delta):
 	get_parent().set_progress(get_parent().get_progress() + speed*delta)
 	if get_parent().get_progress_ratio() == 1:
 		Game.Health -= 1
+		if Game.Health <= 0:
+			get_parent().get_parent().get_parent().get_parent().get_node("GameOver").show()
+			get_parent().get_parent().get_parent().get_parent().get_node("Start").hide()
+			get_parent().get_parent().get_parent().get_parent().get_node("Restart").show()
+			get_parent().get_parent().get_parent().get_parent().get_node("UI").hide()
 		death()
 	
 	if health <= 0:
