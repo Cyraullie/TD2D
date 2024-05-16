@@ -7,7 +7,7 @@ var currTargets = []
 var curr
 
 var reload = 0
-var range = 400 #735
+var range = 735 #735
 
 @onready var timer = get_node("Upgrade/ProgressBar/Timer")
 var startShooting = false
@@ -77,23 +77,30 @@ func _on_timer_timeout():
 
 
 func _on_range_pressed():
-	range += 30
+	if Game.Gold >= int(get_node("Upgrade/Upgrade/HBoxContainer/Range/Label").text):
+		Game.Gold -= int(get_node("Upgrade/Upgrade/HBoxContainer/Range/Label").text)
+		range += 30
+		get_node("Upgrade/Upgrade/HBoxContainer/Range/Label").text = str((int(get_node("Upgrade/Upgrade/HBoxContainer/Range/Label").text)*2))
+		
 
 
 func _on_attack_speed_pressed():
-	if reload <= 2:
-		reload += 0.1
-	timer.wait_time = 3 - reload
-
+	if Game.Gold >= int(get_node("Upgrade/Upgrade/HBoxContainer/AttackSpeed/Label").text):
+		Game.Gold -= int(get_node("Upgrade/Upgrade/HBoxContainer/AttackSpeed/Label").text)
+		if reload <= 2:
+			reload += 0.1
+		timer.wait_time = 3 - reload
+		get_node("Upgrade/Upgrade/HBoxContainer/AttackSpeed/Label").text = str((int(get_node("Upgrade/Upgrade/HBoxContainer/AttackSpeed/Label").text)*2))
+	
 
 func _on_power_pressed():
-	bulletDamage += 1
+	if Game.Gold >= int(get_node("Upgrade/Upgrade/HBoxContainer/Power/Label").text):
+		Game.Gold -= int(get_node("Upgrade/Upgrade/HBoxContainer/Power/Label").text)
+		bulletDamage += 1
+		get_node("Upgrade/Upgrade/HBoxContainer/Power/Label").text = str((int(get_node("Upgrade/Upgrade/HBoxContainer/Power/Label").text)*2))
+	
 
 func update_powers():
-	get_node("Upgrade/Upgrade/HBoxContainer/Range/Label").text = str(range)
-	get_node("Upgrade/Upgrade/HBoxContainer/AttackSpeed/Label").text = str(3-reload)
-	get_node("Upgrade/Upgrade/HBoxContainer/Power/Label").text = str(bulletDamage)
-	
 	get_node("Tower/CollisionShape2D").shape.radius = range
 
 

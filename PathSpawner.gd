@@ -23,6 +23,8 @@ func _on_timer_timeout():
 func _on_start_pressed():
 	Game.gameStarter = true
 	get_parent().get_node("Start").hide()
+	for i in get_parent().get_node("Towers").get_child_count():
+		get_parent().get_node("Towers").get_child(i).get_node("Upgrade/ProgressBar/Timer").start()
 
 func _on_restart_pressed():
 	Game.gameStarter = false
