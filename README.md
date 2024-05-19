@@ -23,13 +23,27 @@ Tower defense en vue de dessus 2D avec godot
 
 ## détails
 
-### éléments utilisable 
+### type de tour 
+- projectile mono cible
+- dégat en zone
+
+#### éléments utilisable 
 - feu
 - glace
 
-### type de défense 
-- 
-
 
 ### type de mob
+- basic
+- plus rapide et moins de vie
+- soigné leur pote ?
+- désactivé les tours ?
+- blindé ? (expert)
 
+### propal
+- pouvoir choisir les mobs envoyés
+
+
+### équilibrage
+- zone des tours de base
+- pv des mobs
+- dégats des tours
