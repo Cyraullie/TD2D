@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bxb4vigl8qt7g"]
+[gd_scene load_steps=20 format=3 uid="uid://bxb4vigl8qt7g"]
 
 [ext_resource type="Script" path="res://Towers/RedBulletTower.gd" id="1_hebc5"]
 [ext_resource type="Texture2D" uid="uid://dxxe1pgngn53p" path="res://PNG/Default size/towerDefense_tile250.png" id="1_yv0le"]
+[ext_resource type="AudioStream" uid="uid://ifisra8x2tly" path="res://Assets/PewPew.mp3" id="3_e2d0h"]
 [ext_resource type="Texture2D" uid="uid://d12abp41lq04a" path="res://PNG/Default size/towerDefense_tile110.png" id="3_l18fp"]
 [ext_resource type="Texture2D" uid="uid://ds11bxf36lfw3" path="res://PNG/Default size/towerDefense_tile297.png" id="4_b8aai"]
 [ext_resource type="Texture2D" uid="uid://d3lj2f66jweit" path="res://PNG/Default size/towerDefense_tile296.png" id="5_ns432"]
@@ -137,6 +138,10 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_rfxn1")
 
 [node name="BulletContainer" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_e2d0h")
+volume_db = -0.5
 
 [node name="Area" type="Panel" parent="."]
 offset_left = -367.0

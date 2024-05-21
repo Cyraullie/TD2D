@@ -26,6 +26,7 @@ func _process(delta):
 	
 func Shoot():
 	var tempBullet = Bullet.instantiate()
+	$AudioStreamPlayer2D.play()
 	tempBullet.pathName = pathName
 	tempBullet.bulletDamage = bulletDamage
 	get_node("BulletContainer").add_child(tempBullet)
