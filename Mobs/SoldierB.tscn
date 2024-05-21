@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://4smcuu2dv27"]
 
 [ext_resource type="Script" path="res://Mobs/SoldierB.gd" id="1_3grrv"]
-[ext_resource type="Texture2D" uid="uid://du2wo2mk5808c" path="res://PNG/Default size/towerDefense_tile245.png" id="2_u7q1n"]
+[ext_resource type="Texture2D" uid="uid://bcjxgaua63bty" path="res://PNG/Default size/towerDefense_tile246.png" id="2_1sy5c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hw5a0"]
 
@@ -29,7 +29,7 @@ func _process(delta):
 script = ExtResource("1_3grrv")
 
 [node name="TowerDefenseTile245" type="Sprite2D" parent="."]
-texture = ExtResource("2_u7q1n")
+texture = ExtResource("2_1sy5c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hw5a0")

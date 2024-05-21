@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dpk75o84ectun"]
 
-[ext_resource type="PackedScene" uid="uid://b7dpgho7bs0tb" path="res://Mobs/SoldierA.tscn" id="1_tu0i6"]
+[ext_resource type="PackedScene" uid="uid://4smcuu2dv27" path="res://Mobs/SoldierB.tscn" id="1_auclj"]
 
 [sub_resource type="Curve2D" id="Curve2D_2w1gt"]
 _data = {
@@ -16,4 +16,4 @@ position = Vector2(5, 88)
 rotation = 0.670522
 loop = false
 
-[node name="Soldier A" parent="PathFollow2D" instance=ExtResource("1_tu0i6")]
+[node name="Soldier B" parent="PathFollow2D" instance=ExtResource("1_auclj")]

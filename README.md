@@ -24,8 +24,8 @@ Tower defense en vue de dessus 2D avec godot
 ## détails
 
 ### type de tour 
-- projectile mono cible
-- dégat en zone
+- [x] projectile mono cible
+- [ ] dégat en zone
 
 #### éléments utilisable 
 - feu
@@ -33,14 +33,14 @@ Tower defense en vue de dessus 2D avec godot
 
 
 ### type de mob
-- basic
-- plus rapide et moins de vie
-- soigné leur pote ?
-- désactivé les tours ?
-- blindé ? (expert)
+- [x] basic
+- [x] plus rapide et moins de vie
+- [ ] soigné leur pote ?
+- [ ] désactivé les tours ?
+- [ ] blindé ? (expert)
 
 ### propal
-- pouvoir choisir les mobs envoyés
+- pouvoir choisir les mobs envoyés (système monétaire pour envoyer les mobs qu'on veut)
 
 
 ### équilibrage
