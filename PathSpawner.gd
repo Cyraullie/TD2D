@@ -19,6 +19,9 @@ func _on_timer_timeout():
 			Game.gameStarter = false
 			if Game.Health > 0:
 				get_parent().get_node("Start").show()
+				for i in get_parent().get_node("Towers").get_child_count():
+					get_parent().get_node("Towers").get_child(i).get_node("Upgrade/ProgressBar/Timer").stop()
+				
 
 func _on_start_pressed():
 	Game.gameStarter = true

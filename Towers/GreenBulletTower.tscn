@@ -1,11 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://bxb4vigl8qt7g"]
+[gd_scene load_steps=20 format=3 uid="uid://b4mfcm1sygmqe"]
 
-[ext_resource type="Script" path="res://Towers/RedBulletTower.gd" id="1_hebc5"]
-[ext_resource type="Texture2D" uid="uid://dxxe1pgngn53p" path="res://PNG/Default size/towerDefense_tile250.png" id="1_yv0le"]
-[ext_resource type="AudioStream" uid="uid://ifisra8x2tly" path="res://Assets/PewPew.mp3" id="3_e2d0h"]
-[ext_resource type="Texture2D" uid="uid://d12abp41lq04a" path="res://PNG/Default size/towerDefense_tile110.png" id="3_l18fp"]
-[ext_resource type="Texture2D" uid="uid://ds11bxf36lfw3" path="res://PNG/Default size/towerDefense_tile297.png" id="4_b8aai"]
-[ext_resource type="Texture2D" uid="uid://d3lj2f66jweit" path="res://PNG/Default size/towerDefense_tile296.png" id="5_ns432"]
+[ext_resource type="Script" path="res://Towers/GreenBulletTower.gd" id="1_fy26d"]
+[ext_resource type="Texture2D" uid="uid://sik83m02exhi" path="res://PNG/Default size/towerDefense_tile249.png" id="2_agf1h"]
+[ext_resource type="AudioStream" uid="uid://ifisra8x2tly" path="res://Assets/PewPew.mp3" id="3_hyvg7"]
+[ext_resource type="Texture2D" uid="uid://d12abp41lq04a" path="res://PNG/Default size/towerDefense_tile110.png" id="4_vq2lv"]
+[ext_resource type="Texture2D" uid="uid://ds11bxf36lfw3" path="res://PNG/Default size/towerDefense_tile297.png" id="5_31bhk"]
+[ext_resource type="Texture2D" uid="uid://d3lj2f66jweit" path="res://PNG/Default size/towerDefense_tile296.png" id="6_cx0m0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvnu7"]
 size = Vector2(86, 68)
@@ -106,9 +106,9 @@ func _process(delta):
 	self.value = get_node(\"Timer\").time_left
 "
 
-[node name="RedBulletTower" type="StaticBody2D"]
+[node name="GreenBulletTower" type="StaticBody2D"]
 input_pickable = true
-script = ExtResource("1_hebc5")
+script = ExtResource("1_fy26d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
@@ -120,7 +120,7 @@ position = Vector2(49, 0)
 [node name="TowerDefenseTile250" type="Sprite2D" parent="."]
 rotation = 1.5708
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_yv0le")
+texture = ExtResource("2_agf1h")
 
 [node name="Tower" type="Area2D" parent="."]
 
@@ -140,7 +140,7 @@ shape = SubResource("RectangleShape2D_rfxn1")
 [node name="BulletContainer" type="Node" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_e2d0h")
+stream = ExtResource("3_hyvg7")
 volume_db = -0.5
 
 [node name="Area" type="Panel" parent="."]
@@ -180,7 +180,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ii4xc")
 [node name="TowerDefenseTile110" type="Sprite2D" parent="Upgrade/Upgrade/HBoxContainer/Range"]
 position = Vector2(110, 116)
 scale = Vector2(1.65625, 1.65625)
-texture = ExtResource("3_l18fp")
+texture = ExtResource("4_vq2lv")
 
 [node name="Label" type="Label" parent="Upgrade/Upgrade/HBoxContainer/Range"]
 layout_mode = 0
@@ -202,7 +202,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ii4xc")
 [node name="TowerDefenseTile297" type="Sprite2D" parent="Upgrade/Upgrade/HBoxContainer/AttackSpeed"]
 position = Vector2(110, 113)
 scale = Vector2(3.03125, 3.03125)
-texture = ExtResource("4_b8aai")
+texture = ExtResource("5_31bhk")
 
 [node name="Label" type="Label" parent="Upgrade/Upgrade/HBoxContainer/AttackSpeed"]
 layout_mode = 0
@@ -224,7 +224,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ii4xc")
 [node name="TowerDefenseTile296" type="Sprite2D" parent="Upgrade/Upgrade/HBoxContainer/Power"]
 position = Vector2(109, 113.155)
 scale = Vector2(2.625, 2.48922)
-texture = ExtResource("5_ns432")
+texture = ExtResource("6_cx0m0")
 
 [node name="Label" type="Label" parent="Upgrade/Upgrade/HBoxContainer/Power"]
 layout_mode = 0
@@ -246,7 +246,7 @@ show_percentage = false
 script = SubResource("GDScript_v576e")
 
 [node name="Timer" type="Timer" parent="Upgrade/ProgressBar"]
-wait_time = 3.0
+wait_time = 4.0
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
