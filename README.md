@@ -41,7 +41,7 @@ Tower defense en vue de dessus 2D avec godot
 
 ### propal
 - pouvoir choisir les mobs envoyés (système monétaire pour envoyer les mobs qu'on veut)
-
+- rogue like (a la fin de mission on gagne des tours mais quand on lance on a une selection aléatoire de tours)
 
 ### équilibrage
 - zone des tours de base
